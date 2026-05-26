@@ -1,0 +1,11 @@
+packages:
+  - 'apps/api'
+  - 'apps/mobile'
+  - 'packages/*'
+  - 'scripts'
+
+# argon2 builds a native crypto binding; esbuild is used by tsx for fast TS execution.
+# Both are well-known and safe to allow build scripts.
+allowBuilds:
+  argon2: true
+  esbuild: true

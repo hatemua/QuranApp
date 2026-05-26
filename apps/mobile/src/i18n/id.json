@@ -1,0 +1,104 @@
+{
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba lagi",
+    "save": "Simpan",
+    "next": "Lanjut",
+    "cancel": "Batal",
+    "close": "Tutup",
+    "back": "Kembali"
+  },
+  "auth": {
+    "welcomeTitle": "Quranic Immersion",
+    "welcomeSubtitle": "Bacalah Al-Quran. Pahami setiap katanya.",
+    "tagline": "Pelajari bahasa wahyu, satu kata pada satu waktu.",
+    "getStarted": "Mulai",
+    "haveAccount": "Saya sudah punya akun",
+    "login": "Masuk",
+    "register": "Buat akun",
+    "email": "Email",
+    "password": "Kata sandi",
+    "displayName": "Nama Anda",
+    "preferredLanguage": "Bahasa terjemahan",
+    "loginCta": "Masuk",
+    "registerCta": "Buat akun",
+    "languageLabel": {
+      "en": "English",
+      "id": "Bahasa Indonesia",
+      "ur": "اردو"
+    },
+    "invalidCredentials": "Email atau kata sandi salah",
+    "genericFailure": "Kami tidak dapat masuk. Silakan coba lagi."
+  },
+  "tabs": {
+    "read": "Baca",
+    "today": "Hari ini",
+    "profile": "Profil"
+  },
+  "today": {
+    "greeting": "Assalamu alaikum, {{name}}",
+    "todaysSession": "Sesi hari ini",
+    "sessionDetail": "{{count}} kata • sekitar {{minutes}} menit",
+    "startSession": "Mulai",
+    "streak": "Beruntun {{count}} hari",
+    "recentlyLearned": "Baru dipelajari",
+    "noWordsYet": "Belum ada kata yang dipelajari. Mulailah sesi pertama Anda."
+  },
+  "read": {
+    "selectSurah": "Pilih Surah",
+    "offline": "Offline",
+    "playAyah": "Putar ayat",
+    "tapWord": "Ketuk kata apa saja untuk mempelajarinya",
+    "ayah": "Ayat"
+  },
+  "word": {
+    "root": "Akar kata",
+    "rootCount": "{{count}}× dalam Al-Quran",
+    "exampleAyah": "Contoh",
+    "save": "Simpan",
+    "saved": "Tersimpan",
+    "addToReview": "Tambahkan ke ulasan hari ini",
+    "reciter": "Mishary Alafasy",
+    "derived": "Kata turunan"
+  },
+  "session": {
+    "tapToReveal": "Ketuk untuk melihat artinya",
+    "whatDoesItMean": "Apa arti {{word}}?",
+    "fillBlank": "Lengkapi kata yang hilang",
+    "matchPairs": "Cocokkan setiap kata dengan artinya",
+    "wellDone": "أحسنت",
+    "correctAnswer": "Benar: {{meaning}}",
+    "nextWord": "Lanjut",
+    "complete": "Selesaikan sesi"
+  },
+  "summary": {
+    "header": "الحمد لله",
+    "completed": "Anda menyelesaikan sesi hari ini",
+    "wordsLearned": "{{count}} kata",
+    "accuracy": "Akurasi {{percent}}%",
+    "backToToday": "Kembali ke Hari Ini"
+  },
+  "profile": {
+    "stats": "Kemajuan Anda",
+    "settings": "Pengaturan",
+    "language": "Bahasa terjemahan",
+    "dailyGoal": "Target harian",
+    "dailyGoalWords": "{{count}} kata / hari",
+    "notifications": "Pengingat harian",
+    "logout": "Keluar",
+    "rtlToast": "Silakan tutup dan buka kembali aplikasi untuk menerapkan tata letak baru.",
+    "mastery": {
+      "seen": "Dilihat",
+      "recognised": "Dikenali",
+      "understood": "Dipahami",
+      "retained": "Dipertahankan",
+      "mastered": "Dikuasai"
+    }
+  },
+  "validation": {
+    "emailInvalid": "Masukkan email yang valid",
+    "passwordShort": "Gunakan minimal 8 karakter",
+    "displayNameRequired": "Silakan masukkan nama Anda"
+  }
+}

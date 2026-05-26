@@ -1,0 +1,104 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "save": "Save",
+    "next": "Next",
+    "cancel": "Cancel",
+    "close": "Close",
+    "back": "Back"
+  },
+  "auth": {
+    "welcomeTitle": "Quranic Immersion",
+    "welcomeSubtitle": "Read the Quran. Understand every word.",
+    "tagline": "Learn the language of revelation, one word at a time.",
+    "getStarted": "Get Started",
+    "haveAccount": "I have an account",
+    "login": "Log in",
+    "register": "Create account",
+    "email": "Email",
+    "password": "Password",
+    "displayName": "Your name",
+    "preferredLanguage": "Translation language",
+    "loginCta": "Log in",
+    "registerCta": "Create account",
+    "languageLabel": {
+      "en": "English",
+      "id": "Bahasa Indonesia",
+      "ur": "اردو"
+    },
+    "invalidCredentials": "Email or password is incorrect",
+    "genericFailure": "We couldn't sign you in. Please try again."
+  },
+  "tabs": {
+    "read": "Read",
+    "today": "Today",
+    "profile": "Profile"
+  },
+  "today": {
+    "greeting": "Assalamu alaikum, {{name}}",
+    "todaysSession": "Today's session",
+    "sessionDetail": "{{count}} words • about {{minutes}} minutes",
+    "startSession": "Start",
+    "streak": "{{count}}-day streak",
+    "recentlyLearned": "Recently learned",
+    "noWordsYet": "No words learned yet. Start your first session."
+  },
+  "read": {
+    "selectSurah": "Select Surah",
+    "offline": "Offline",
+    "playAyah": "Play ayah",
+    "tapWord": "Tap any word to learn it",
+    "ayah": "Ayah"
+  },
+  "word": {
+    "root": "Root",
+    "rootCount": "{{count}}× in Quran",
+    "exampleAyah": "Example",
+    "save": "Save",
+    "saved": "Saved",
+    "addToReview": "Add to today's review",
+    "reciter": "Mishary Alafasy",
+    "derived": "Derived words"
+  },
+  "session": {
+    "tapToReveal": "Tap to reveal meaning",
+    "whatDoesItMean": "What does {{word}} mean?",
+    "fillBlank": "Fill in the missing word",
+    "matchPairs": "Match each word to its meaning",
+    "wellDone": "أحسنت",
+    "correctAnswer": "Correct: {{meaning}}",
+    "nextWord": "Next",
+    "complete": "Complete session"
+  },
+  "summary": {
+    "header": "الحمد لله",
+    "completed": "You completed today's session",
+    "wordsLearned": "{{count}} words",
+    "accuracy": "{{percent}}% accuracy",
+    "backToToday": "Back to Today"
+  },
+  "profile": {
+    "stats": "Your progress",
+    "settings": "Settings",
+    "language": "Translation language",
+    "dailyGoal": "Daily goal",
+    "dailyGoalWords": "{{count}} words / day",
+    "notifications": "Daily reminder",
+    "logout": "Log out",
+    "rtlToast": "Please close and reopen the app to apply the new layout.",
+    "mastery": {
+      "seen": "Seen",
+      "recognised": "Recognised",
+      "understood": "Understood",
+      "retained": "Retained",
+      "mastered": "Mastered"
+    }
+  },
+  "validation": {
+    "emailInvalid": "Enter a valid email",
+    "passwordShort": "Use at least 8 characters",
+    "displayNameRequired": "Please enter your name"
+  }
+}

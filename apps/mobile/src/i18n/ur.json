@@ -1,0 +1,104 @@
+{
+  "common": {
+    "loading": "لوڈ ہو رہا ہے...",
+    "error": "کچھ غلط ہو گیا",
+    "retry": "دوبارہ کوشش کریں",
+    "save": "محفوظ کریں",
+    "next": "اگلا",
+    "cancel": "منسوخ",
+    "close": "بند کریں",
+    "back": "واپس"
+  },
+  "auth": {
+    "welcomeTitle": "قرآنی غوطہ زنی",
+    "welcomeSubtitle": "قرآن پڑھیں۔ ہر لفظ سمجھیں۔",
+    "tagline": "وحی کی زبان سیکھیں، ایک لفظ ایک وقت میں۔",
+    "getStarted": "شروع کریں",
+    "haveAccount": "میرا اکاؤنٹ ہے",
+    "login": "لاگ ان",
+    "register": "اکاؤنٹ بنائیں",
+    "email": "ای میل",
+    "password": "پاس ورڈ",
+    "displayName": "آپ کا نام",
+    "preferredLanguage": "ترجمے کی زبان",
+    "loginCta": "لاگ ان",
+    "registerCta": "اکاؤنٹ بنائیں",
+    "languageLabel": {
+      "en": "English",
+      "id": "Bahasa Indonesia",
+      "ur": "اردو"
+    },
+    "invalidCredentials": "ای میل یا پاس ورڈ غلط ہے",
+    "genericFailure": "ہم آپ کو سائن ان نہیں کر سکے۔ دوبارہ کوشش کریں۔"
+  },
+  "tabs": {
+    "read": "پڑھیں",
+    "today": "آج",
+    "profile": "پروفائل"
+  },
+  "today": {
+    "greeting": "السلام علیکم، {{name}}",
+    "todaysSession": "آج کا سیشن",
+    "sessionDetail": "{{count}} الفاظ • تقریباً {{minutes}} منٹ",
+    "startSession": "شروع کریں",
+    "streak": "{{count}} دن کا تسلسل",
+    "recentlyLearned": "حال ہی میں سیکھے",
+    "noWordsYet": "ابھی تک کوئی لفظ نہیں سیکھا۔ اپنا پہلا سیشن شروع کریں۔"
+  },
+  "read": {
+    "selectSurah": "سورہ منتخب کریں",
+    "offline": "آف لائن",
+    "playAyah": "آیت چلائیں",
+    "tapWord": "کسی بھی لفظ کو ٹیپ کر کے سیکھیں",
+    "ayah": "آیت"
+  },
+  "word": {
+    "root": "جڑ",
+    "rootCount": "قرآن میں {{count}}× آتا ہے",
+    "exampleAyah": "مثال",
+    "save": "محفوظ کریں",
+    "saved": "محفوظ شدہ",
+    "addToReview": "آج کے ریویو میں شامل کریں",
+    "reciter": "مشاری العفاسی",
+    "derived": "مشتق الفاظ"
+  },
+  "session": {
+    "tapToReveal": "معنی دیکھنے کے لیے ٹیپ کریں",
+    "whatDoesItMean": "{{word}} کا کیا مطلب ہے؟",
+    "fillBlank": "گمشدہ لفظ پُر کریں",
+    "matchPairs": "ہر لفظ کو اس کے معنی سے جوڑیں",
+    "wellDone": "أحسنت",
+    "correctAnswer": "درست: {{meaning}}",
+    "nextWord": "اگلا",
+    "complete": "سیشن مکمل کریں"
+  },
+  "summary": {
+    "header": "الحمد لله",
+    "completed": "آپ نے آج کا سیشن مکمل کیا",
+    "wordsLearned": "{{count}} الفاظ",
+    "accuracy": "درستگی {{percent}}%",
+    "backToToday": "آج کی طرف واپس"
+  },
+  "profile": {
+    "stats": "آپ کی پیش رفت",
+    "settings": "ترتیبات",
+    "language": "ترجمے کی زبان",
+    "dailyGoal": "روزانہ ہدف",
+    "dailyGoalWords": "{{count}} الفاظ / دن",
+    "notifications": "روزانہ یاددہانی",
+    "logout": "لاگ آؤٹ",
+    "rtlToast": "براہ کرم نئی ترتیب لاگو کرنے کے لیے ایپ بند کر کے دوبارہ کھولیں۔",
+    "mastery": {
+      "seen": "دیکھے گئے",
+      "recognised": "پہچانے گئے",
+      "understood": "سمجھے گئے",
+      "retained": "یاد رہے",
+      "mastered": "مہارت"
+    }
+  },
+  "validation": {
+    "emailInvalid": "درست ای میل درج کریں",
+    "passwordShort": "کم از کم 8 حروف استعمال کریں",
+    "displayNameRequired": "براہ کرم اپنا نام درج کریں"
+  }
+}

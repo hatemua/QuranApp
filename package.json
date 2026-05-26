@@ -1,0 +1,29 @@
+{
+  "name": "quranic-immersion",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Quranic Arabic Immersion — monorepo root (Fastify API + seed pipeline; Android app lives in apps/android as a standalone Gradle project)",
+  "scripts": {
+    "dev:api": "pnpm --filter @quranic-immersion/api dev",
+    "build:api": "pnpm --filter @quranic-immersion/api build",
+    "build:shared": "pnpm --filter @quranic-immersion/shared build",
+    "seed:quran": "pnpm --filter @quranic-immersion/seed run seed:quran",
+    "seed:corpus": "pnpm --filter @quranic-immersion/seed run seed:corpus",
+    "seed:translations": "pnpm --filter @quranic-immersion/seed run seed:translations",
+    "seed:import": "pnpm --filter @quranic-immersion/seed run import",
+    "seed:all": "pnpm build:shared && pnpm seed:quran && pnpm seed:corpus && pnpm seed:translations && pnpm seed:import",
+    "typecheck": "pnpm -r run typecheck",
+    "lint": "pnpm -r run lint"
+  },
+  "devDependencies": {
+    "@fontsource/amiri": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@11.3.0"
+}

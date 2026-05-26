@@ -1,0 +1,27 @@
+{
+  "name": "@quranic-immersion/seed",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Data seed pipeline — downloads Tanzil + QAC + translations and imports into MongoDB",
+  "scripts": {
+    "seed:quran": "tsx src/seed-quran.ts",
+    "seed:corpus": "tsx src/seed-corpus.ts",
+    "seed:translations": "tsx src/seed-translations.ts",
+    "import": "tsx src/import-to-mongo.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@quranic-immersion/shared": "workspace:*",
+    "adm-zip": "^0.5.14",
+    "dotenv": "^16.4.5",
+    "fast-xml-parser": "^4.4.1",
+    "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.5",
+    "@types/node": "^20.14.11",
+    "tsx": "^4.16.5",
+    "typescript": "^5.5.4"
+  }
+}

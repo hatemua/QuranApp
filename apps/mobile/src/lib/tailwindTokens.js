@@ -1,0 +1,21 @@
+module.exports = {
+  colors: {
+    background: '#FAFAF9',
+    surface: '#FFFFFF',
+    primary: '#047857',
+    'primary-muted': '#D1FAE5',
+    accent: '#D97706',
+    'accent-muted': '#FEF3C7',
+    text: '#1C1917',
+    'text-muted': '#78716C',
+    'text-faint': '#A8A29E',
+    border: '#E7E5E4',
+    'border-strong': '#D6D3D1',
+    'mastery-mastered': '#047857',
+    'mastery-retained': '#10B981',
+    'mastery-understood': '#34D399',
+    'mastery-recognised': '#D97706',
+    'mastery-seen': '#44403C',
+    'mastery-unseen': '#A8A29E',
+  },
+};

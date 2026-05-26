@@ -1,0 +1,42 @@
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Data (downloaded source files and processed intermediate JSON)
+data/raw/
+data/processed/
+
+# Editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# OS
+.cache/
+
+# Android
+apps/android/build/
+apps/android/.gradle/
+apps/android/local.properties
+apps/android/google-services.json
+apps/android/**/build/
+apps/android/.idea/
+apps/android/captures/
+apps/android/.cxx/
+apps/android/app/release/
+
+# Test
+coverage/
