@@ -75,13 +75,17 @@ function SheetContent({wordId}: {wordId: string}) {
         </View>
       ) : null}
 
+      <View style={styles.audioRow}>
+        <AudioButton url={data.audio_url} reciter={t('word.reciter')} />
+      </View>
+
       {exampleAyah ? (
         <View style={styles.section}>
           <Text style={styles.sectionLabel}>{t('word.exampleAyah')}</Text>
           <ExampleAyah text={exampleAyah.text_arabic} highlight={exampleAyah.highlighted_word_position} />
           <Text style={styles.translation}>{exampleAyah.translation}</Text>
           <View style={styles.audioRow}>
-            <AudioButton url={exampleAyah.audio_url} reciter={t('word.reciter')} />
+            <AudioButton url={exampleAyah.audio_url} reciter={t('word.reciter')} size="sm" />
           </View>
         </View>
       ) : null}

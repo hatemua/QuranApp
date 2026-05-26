@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
       android:name=".MainApplication"
@@ -26,5 +27,37 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+
+      <!-- Home-screen widget -->
+      <receiver
+          android:name=".widget.WordWidgetProvider"
+          android:label="Quranic Immersion"
+          android:exported="true">
+        <intent-filter>
+          <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+          <action android:name="com.mobile.widget.ACTION_REFRESH" />
+        </intent-filter>
+        <meta-data
+            android:name="android.appwidget.provider"
+            android:resource="@xml/word_widget_info" />
+      </receiver>
+
+      <!-- Internal widget action handler -->
+      <receiver
+          android:name=".widget.WidgetActionReceiver"
+          android:exported="false">
+        <intent-filter>
+          <action android:name="com.mobile.widget.ACTION_NEXT" />
+          <action android:name="com.mobile.widget.ACTION_ANSWER_A" />
+          <action android:name="com.mobile.widget.ACTION_ANSWER_B" />
+          <action android:name="com.mobile.widget.ACTION_ANSWER_C" />
+          <action android:name="com.mobile.widget.ACTION_ANSWER_D" />
+        </intent-filter>
+      </receiver>
+
+      <!-- Audio playback for the widget -->
+      <service
+          android:name=".widget.WidgetAudioService"
+          android:exported="false" />
     </application>
 </manifest>

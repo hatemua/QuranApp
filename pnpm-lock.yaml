@@ -181,6 +181,9 @@ importers:
       '@babel/core':
         specifier: ^7.20.0
         version: 7.29.0
+      '@babel/plugin-transform-react-jsx':
+        specifier: ^7.25.0
+        version: 7.28.6(@babel/core@7.29.0)
       '@babel/preset-env':
         specifier: ^7.20.0
         version: 7.29.5(@babel/core@7.29.0)

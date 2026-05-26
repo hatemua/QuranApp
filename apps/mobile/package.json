@@ -48,6 +48,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@babel/preset-env": "^7.20.0",
+    "@babel/plugin-transform-react-jsx": "^7.25.0",
     "@react-native-community/cli": "14.1.0",
     "@react-native-community/cli-platform-android": "14.1.0",
     "@react-native-community/cli-platform-ios": "14.1.0",

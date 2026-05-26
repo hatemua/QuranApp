@@ -46,6 +46,7 @@ function makeWord(
     meaning,
     root,
     mastery_state: state,
+    audio_url: `https://audio.qurancdn.com/wbw/001_001_${String(position).padStart(3, '0')}.mp3`,
   };
 }
 
@@ -267,6 +268,7 @@ const dailyWords: DailyWord[] = [
       highlighted_word_position: 3,
     },
     mastery_state: 'seen',
+    audio_url: 'https://audio.qurancdn.com/wbw/001_001_003.mp3',
     distractor_meanings: ['justice', 'patience', 'guidance'],
   },
   {
@@ -284,6 +286,7 @@ const dailyWords: DailyWord[] = [
       highlighted_word_position: 1,
     },
     mastery_state: 'recognised',
+    audio_url: 'https://audio.qurancdn.com/wbw/001_002_001.mp3',
     distractor_meanings: ['gratitude', 'remembrance', 'glory'],
   },
   {
@@ -301,6 +304,7 @@ const dailyWords: DailyWord[] = [
       highlighted_word_position: 3,
     },
     mastery_state: 'understood',
+    audio_url: 'https://audio.qurancdn.com/wbw/001_002_003.mp3',
     distractor_meanings: ['servant', 'witness', 'creator'],
   },
   {
@@ -318,6 +322,7 @@ const dailyWords: DailyWord[] = [
       highlighted_word_position: 3,
     },
     mastery_state: 'seen',
+    audio_url: 'https://audio.qurancdn.com/wbw/001_004_003.mp3',
     distractor_meanings: ['kingdom', 'faith', 'mercy'],
   },
   {
@@ -335,6 +340,7 @@ const dailyWords: DailyWord[] = [
       highlighted_word_position: 2,
     },
     mastery_state: 'unseen',
+    audio_url: 'https://audio.qurancdn.com/wbw/001_006_002.mp3',
     distractor_meanings: ['light', 'truth', 'door'],
   },
 ];
@@ -366,6 +372,7 @@ function buildWordDetail(id: string): WordDetailResponse {
         ]
       : [],
     example_ayahs: [base.example_ayah],
+    audio_url: base.audio_url,
     mastery_state: base.mastery_state,
     saved: false,
   };

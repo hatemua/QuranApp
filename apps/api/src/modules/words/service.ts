@@ -4,7 +4,7 @@ import {UserModel} from '../auth/model.js';
 import {QuranWordModel} from '../quran/model.js';
 import {UserWordStateModel} from './word-state-model.js';
 import {getVersesByChapter, TRANSLATION_ID} from '../../clients/quranCom.js';
-import {ayahAudioUrl} from '../../utils/audio.js';
+import {ayahAudioUrl, wordAudioUrl} from '../../utils/audio.js';
 import {ApiError} from '../../utils/errors.js';
 
 export interface ExampleAyah {
@@ -23,6 +23,7 @@ export interface DailyWord {
   meaning: string;
   root: string | null;
   example_ayah: ExampleAyah;
+  audio_url: string;
   mastery_state: MasteryState;
   distractor_meanings: string[];
 }
@@ -55,6 +56,7 @@ export interface WordDetailResponse {
   root: RootRef | null;
   derived: DerivedWord[];
   example_ayahs: ExampleAyah[];
+  audio_url: string;
   mastery_state: MasteryState;
   saved: boolean;
 }
@@ -95,6 +97,7 @@ interface EnrichedWord {
   meaning: string;
   root: string | null;
   example_ayah: ExampleAyah;
+  audio_url: string;
   mastery_state: MasteryState;
 }
 
@@ -124,6 +127,7 @@ async function enrichOccurrence(
       audio_url: ayahAudioUrl(occ.surah, occ.ayah),
       highlighted_word_position: occ.position,
     },
+    audio_url: wordAudioUrl(occ.surah, occ.ayah, occ.position),
     mastery_state: 'unseen',
   };
 }
@@ -194,6 +198,7 @@ export async function getDaily(userId: string): Promise<DailyWordsResponse> {
     meaning: e.meaning,
     root: e.root,
     example_ayah: e.example_ayah,
+    audio_url: e.audio_url,
     mastery_state: e.mastery_state,
     distractor_meanings: pickDistractors(e.meaning, meanings, 3),
   }));
@@ -221,6 +226,7 @@ export async function getDaily(userId: string): Promise<DailyWordsResponse> {
       meaning: e.meaning,
       root: e.root,
       example_ayah: e.example_ayah,
+      audio_url: e.audio_url,
       mastery_state: r.mastery_state,
       distractor_meanings: [],
     });
@@ -309,6 +315,7 @@ export async function getById(userId: string, lemma: string): Promise<WordDetail
     root,
     derived,
     example_ayahs,
+    audio_url: primary.audio_url,
     mastery_state: state?.mastery_state ?? 'unseen',
     saved: user.savedLemmas.includes(primary.word_id),
   };

@@ -84,6 +84,7 @@ export interface WordInAyahDTO {
   meaning: string;
   root: string | null;
   mastery_state: MasteryState;
+  audio_url: string;
 }
 
 export interface RootRef {
@@ -113,6 +114,7 @@ export interface WordDetailResponse {
     audio_url: string;
     highlighted_word_position: number;
   }>;
+  audio_url: string;
   mastery_state: MasteryState;
   saved: boolean;
 }
@@ -131,6 +133,7 @@ export interface DailyWord {
     audio_url: string;
     highlighted_word_position: number;
   };
+  audio_url: string;
   mastery_state: MasteryState;
   distractor_meanings: string[];
 }

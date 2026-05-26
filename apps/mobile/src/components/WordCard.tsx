@@ -25,6 +25,7 @@ export function WordCard({word, variant, onPress, revealed, onReveal}: Props) {
   const meaning = word.meaning;
   const root = typeof word.root === 'string' ? word.root : word.root?.letters ?? null;
   const example = 'example_ayah' in word ? word.example_ayah : undefined;
+  const wordAudio = 'audio_url' in word ? word.audio_url : undefined;
 
   if (variant === 'compact') {
     return (
@@ -52,10 +53,10 @@ export function WordCard({word, variant, onPress, revealed, onReveal}: Props) {
                 {t('word.root')}: {root}
               </Text>
             ) : null}
-            {example ? <ExampleAyah example={example} /> : null}
-            {example?.audio_url ? (
-              <AudioButton url={example.audio_url} reciter={t('word.reciter')} size="sm" />
+            {wordAudio ? (
+              <AudioButton url={wordAudio} reciter={t('word.reciter')} />
             ) : null}
+            {example ? <ExampleAyah example={example} /> : null}
           </View>
         ) : (
           <Pressable onPress={onReveal} style={styles.revealBtn}>

@@ -5,7 +5,7 @@ import {UserModel} from '../auth/model.js';
 import {QuranWordModel} from './model.js';
 import {UserWordStateModel} from '../words/word-state-model.js';
 import {listChapters, getVersesByChapter} from '../../clients/quranCom.js';
-import {ayahAudioUrl} from '../../utils/audio.js';
+import {ayahAudioUrl, wordAudioUrl} from '../../utils/audio.js';
 import {ApiError} from '../../utils/errors.js';
 
 interface WordOut {
@@ -16,6 +16,7 @@ interface WordOut {
   meaning: string;
   root: string | null;
   mastery_state: MasteryState;
+  audio_url: string;
 }
 
 interface AyahOut {
@@ -131,6 +132,7 @@ export async function registerQuranRoutes(app: FastifyInstance): Promise<void> {
             meaning: w.translation?.text ?? '',
             root: m?.root ?? null,
             mastery_state: stateByLemma.get(wid) ?? 'unseen',
+            audio_url: wordAudioUrl(n, v.verse_number, pos),
           });
         }
         return {
