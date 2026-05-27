@@ -6,6 +6,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.widget.RemoteViews
 import com.mobile.R
 import org.json.JSONObject
@@ -17,37 +18,45 @@ class WordWidgetProvider : AppWidgetProvider() {
     appWidgetManager: AppWidgetManager,
     appWidgetIds: IntArray,
   ) {
-    appWidgetIds.forEach { id -> render(context, appWidgetManager, id) }
-    // Make sure the periodic refresh worker is scheduled.
-    WidgetUpdateWorker.schedule(context)
+    appWidgetIds.forEach { id ->
+      try { render(context, appWidgetManager, id) }
+      catch (e: Throwable) { Log.e(TAG, "render failed for id=$id", e) }
+    }
+    try { WidgetUpdateWorker.schedule(context) }
+    catch (e: Throwable) { Log.e(TAG, "schedule failed", e) }
   }
 
   override fun onEnabled(context: Context) {
     super.onEnabled(context)
-    WidgetUpdateWorker.schedule(context)
+    try { WidgetUpdateWorker.schedule(context) }
+    catch (e: Throwable) { Log.e(TAG, "schedule failed in onEnabled", e) }
   }
 
   override fun onDisabled(context: Context) {
     super.onDisabled(context)
-    WidgetUpdateWorker.cancel(context)
+    try { WidgetUpdateWorker.cancel(context) }
+    catch (e: Throwable) { Log.e(TAG, "cancel failed in onDisabled", e) }
   }
 
   override fun onReceive(context: Context, intent: Intent) {
     super.onReceive(context, intent)
-    // For external broadcasts (APPWIDGET_UPDATE) the base class handles dispatch.
-    // We also catch our internal explicit ACTION_REFRESH here to redraw.
     if (intent.action == ACTION_REFRESH) {
-      refreshAll(context)
+      try { refreshAll(context) }
+      catch (e: Throwable) { Log.e(TAG, "refresh failed", e) }
     }
   }
 
   companion object {
+    private const val TAG = "WordWidgetProvider"
     const val ACTION_REFRESH = "com.mobile.widget.ACTION_REFRESH"
 
     fun refreshAll(context: Context) {
       val mgr = AppWidgetManager.getInstance(context)
       val ids = mgr.getAppWidgetIds(ComponentName(context, WordWidgetProvider::class.java))
-      ids.forEach { id -> render(context, mgr, id) }
+      ids.forEach { id ->
+        try { render(context, mgr, id) }
+        catch (e: Throwable) { Log.e(TAG, "refreshAll render failed for id=$id", e) }
+      }
     }
 
     private fun render(context: Context, mgr: AppWidgetManager, appWidgetId: Int) {

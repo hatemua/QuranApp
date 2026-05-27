@@ -5,24 +5,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/widget_background"
+    android:background="#FAFAF9"
     android:padding="18dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="28sp"
+        android:textSize="22sp"
         android:textColor="#047857"
-        android:fontFamily="@font/amiri_bold"
-        android:text="قُرْآن" />
+        android:textStyle="bold"
+        android:text="Quranic Immersion" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="8dp"
-        android:textSize="13sp"
+        android:textSize="12sp"
         android:textColor="#78716C"
-        android:text="Open Quranic Immersion to load words" />
+        android:text="Tap to open and load words" />
 
 </LinearLayout>

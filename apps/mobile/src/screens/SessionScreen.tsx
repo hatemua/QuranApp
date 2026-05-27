@@ -5,7 +5,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import {Check} from 'lucide-react-native';
+import {Check, X} from 'lucide-react-native';
 import {useRoute, useNavigation, type RouteProp} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useTranslation} from 'react-i18next';
@@ -137,7 +137,16 @@ export function SessionScreen() {
 
   return (
     <Screen>
-      <ProgressDots total={words.length} current={index} />
+      <View style={styles.headerRow}>
+        <ProgressDots total={words.length} current={index} />
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Close session"
+          onPress={() => nav.popToTop()}
+          style={({pressed}) => [styles.closeBtn, pressed && styles.closeBtnPressed]}>
+          <X size={20} color={colors.textMuted} />
+        </Pressable>
+      </View>
 
       <View style={styles.cardWrap}>
         <WordCard
@@ -159,15 +168,24 @@ export function SessionScreen() {
 
       {answer ? <Feedback answer={answer} correctMeaning={currentWord.meaning} /> : null}
 
-      {answer ? (
-        <Button
-          label={
-            index === words.length - 1 ? t('session.complete') : t('session.nextWord')
-          }
-          onPress={() => void advance()}
-          style={styles.nextBtn}
-        />
-      ) : null}
+      <View style={styles.footer}>
+        {answer ? (
+          <Button
+            label={
+              index === words.length - 1 ? t('session.complete') : t('session.nextWord')
+            }
+            onPress={() => void advance()}
+          />
+        ) : (
+          <Button
+            label={
+              index === words.length - 1 ? t('session.complete') : t('session.nextWord')
+            }
+            variant="secondary"
+            onPress={() => void advance()}
+          />
+        )}
+      </View>
     </Screen>
   );
 }
@@ -396,7 +414,26 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 const styles = StyleSheet.create({
-  dotsRow: {flexDirection: 'row', gap: 6, marginTop: 8, marginBottom: 16, alignSelf: 'center'},
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 8,
+    marginBottom: 16,
+  },
+  closeBtn: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  closeBtnPressed: {opacity: 0.7},
+  footer: {marginTop: 'auto', paddingTop: 12},
+  dotsRow: {flexDirection: 'row', gap: 6, alignSelf: 'center'},
   dot: {width: 10, height: 10, borderRadius: 5, backgroundColor: colors.border},
   dotDone: {backgroundColor: colors.primary},
   dotActive: {backgroundColor: colors.primaryMuted, borderWidth: 2, borderColor: colors.primary},
@@ -476,5 +513,4 @@ const styles = StyleSheet.create({
     backgroundColor: colors.accentMuted,
   },
   feedbackIncorrectText: {fontFamily: fonts.latin, fontSize: 14, color: colors.text},
-  nextBtn: {marginTop: 'auto'},
 });

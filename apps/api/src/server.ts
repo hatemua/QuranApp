@@ -24,6 +24,27 @@ export async function buildServer(): Promise<FastifyInstance> {
   await app.register(cors, {origin: true});
   await app.register(fastifyJwt, {secret: config.JWT_SECRET});
 
+  // Allow POST endpoints to be called without a body even when Content-Type is
+  // application/json. Fastify's default JSON parser rejects empty bodies with
+  // FST_ERR_CTP_EMPTY_JSON_BODY; we treat empty body as an empty object.
+  app.removeContentTypeParser(['application/json']);
+  app.addContentTypeParser(
+    'application/json',
+    {parseAs: 'string'},
+    (_req, body, done) => {
+      const raw = body as string;
+      if (!raw || raw.length === 0) {
+        done(null, {});
+        return;
+      }
+      try {
+        done(null, JSON.parse(raw));
+      } catch (err) {
+        done(err as Error, undefined);
+      }
+    },
+  );
+
   app.setErrorHandler((err, _req: FastifyRequest, reply: FastifyReply) => {
     if (err instanceof ApiError) {
       return reply.code(err.statusCode).send({

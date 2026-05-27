@@ -36,9 +36,13 @@ async function rawFetch<T>(path: string, opts: FetchOptions): Promise<T> {
   }
 
   const headers: Record<string, string> = {
-    'Content-Type': 'application/json',
     ...(opts.headers ?? {}),
   };
+  // Only declare a JSON body Content-Type when we actually have a body — otherwise
+  // Fastify's strict JSON parser rejects empty payloads with FST_ERR_CTP_EMPTY_JSON_BODY.
+  if (opts.body !== undefined) {
+    headers['Content-Type'] = 'application/json';
+  }
 
   if (!opts.skipAuth) {
     const accessToken = useAuthStore.getState().accessToken;
